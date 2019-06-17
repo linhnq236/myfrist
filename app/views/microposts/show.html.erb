@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back', microposts_path %>
+<%= link_to 'Edit', edit_micropost_path(@micropost) %><br>
+<p><h2><%= @micropost.title %></h2><br></p>
+<p><%= @micropost.user_id %></p>
+<p><%= @micropost.created_at %></p>
+<p><%= @micropost.content %></p>
+<p><%= image_tag @micropost.image.url if @micropost.image?%></p>

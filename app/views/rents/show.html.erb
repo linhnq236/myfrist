@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @rent.tel %>
+</p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @rent.fullname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @rent.address %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rent.user_id %>
+</p>
+
+<p>
+  <strong>Micropost:</strong>
+  <%= @rent.micropost_id %>
+</p>
+
+<%= link_to 'Edit', edit_rent_path(@rent) %> |
+<%= link_to 'Back', rents_path %>

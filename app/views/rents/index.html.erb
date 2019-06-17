@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tel</th>
+      <th>Fullname</th>
+      <th>Address</th>
+      <th>User</th>
+      <th>Micropost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rents.each do |rent| %>
+      <tr>
+        <td><%= rent.tel %></td>
+        <td><%= rent.fullname %></td>
+        <td><%= rent.address %></td>
+        <td><%= rent.user_id %></td>
+        <td><%= rent.micropost_id %></td>
+        <td><%= link_to 'Show', rent %></td>
+        <td><%= link_to 'Edit', edit_rent_path(rent) %></td>
+        <td><%= link_to 'Destroy', rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rent', new_rent_path %>

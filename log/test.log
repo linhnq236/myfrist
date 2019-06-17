@@ -1,0 +1,30 @@
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.9ms)[0m  [1m[31mDELETE FROM `users`;
+DELETE FROM `microposts`;
+DELETE FROM `searches`;
+INSERT INTO `users` (`id`, `email`, `name`, `created_at`, `updated_at`, `password_digest`, `remember_digest`, `activation_digest`, `activated`, `activated_at`) VALUES (980190962, 'MyString', 'MyString', '2019-05-27 06:25:10', '2019-05-27 06:25:10', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyString', '2019-05-27 06:25:10', '2019-05-27 06:25:10', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO `microposts` (`id`, `title`, `content`, `image`, `user_id`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', 'MyText', 'MyText', 1, '2019-05-27 06:25:10', '2019-05-27 06:25:10'), (298486374, 'MyString', 'MyText', 'MyText', 1, '2019-05-27 06:25:10', '2019-05-27 06:25:10');
+INSERT INTO `searches` (`id`, `search`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', '2019-05-27 06:25:10', '2019-05-27 06:25:10'), (298486374, 'MyString', '2019-05-27 06:25:10', '2019-05-27 06:25:10');
+[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------
+UserMailerTest: test_account_activation
+---------------------------------------
+UserMailer#account_activation: processed outbound mail in 0.1ms
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+UserMailerTest: test_password_reset
+-----------------------------------
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.4ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.8ms)
+UserMailer#password_reset: processed outbound mail in 36.0ms
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

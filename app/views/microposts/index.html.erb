@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<div class='inf'>
+<h1>Tin Chính trong ngày</h1>
+  <% @microposts.each do |micropost| %>
+    <div class='format'>
+    <%= link_to image_tag(micropost.image.url, class: "img-thumbnail"), micropost %>
+    <div id='format_content'>
+        <h2> <%= link_to micropost.title,micropost %></h2>
+        <%= link_to micropost.content[0..100] %>
+    </div>
+      </div>
+         <% end %>
+    <%= paginate @microposts, theme: 'twitter-bootstrap-3' %>
+</div>
